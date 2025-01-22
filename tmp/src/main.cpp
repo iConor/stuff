@@ -5,9 +5,9 @@
 
 #include <stdio.h>
 
-
+#if OS_WINDOWS
 #include "win32_file.cpp"
-
+#endif
 
 int main(int argc, char** argv)
 {
@@ -25,6 +25,7 @@ int main(int argc, char** argv)
     printf("ARCH_X86\t%d\n", ARCH_X86);
     printf("ARCH_X64\t%d\n", ARCH_X64);
 
+#if OS_WINDOWS
     printf("\n");
 
     char* in_file = "F:\\dev\\probable-garbanzo\\src\\main.cpp";
@@ -82,6 +83,7 @@ int main(int argc, char** argv)
     str8 user_dir;
     file_user_dir(&user_dir);
     printf("%s\n", user_dir.data);
+#endif
 
     return 0;
 }
