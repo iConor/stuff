@@ -1,14 +1,13 @@
-#include "SDL.h"
-#include "SDL_opengl.h"
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_opengl.h>
 
-#include "render_opengl_init.h"
-
-#include "render_opengl.h"
+#include "opengl_init.h"
+#include "opengl_init.cpp"
 
 #include "example.cpp"
 
-static bool global_running;
 
+static bool global_running;
 
 
 static void sdl_process_messages();

@@ -24,7 +24,7 @@ static bool gl_check_shader(GLuint handle, const char* label)
         char* buffer = new char[log_length];
         glGetShaderInfoLog(handle, log_length, NULL, (GLchar*)buffer);
         fprintf(stderr, "%s", buffer);
-        delete buffer;
+        delete[] buffer;
     }
 
     fprintf(stderr, "\n");
@@ -52,7 +52,7 @@ static bool gl_check_program(GLuint handle, const char* label)
         char* buffer = new char[log_length];
         glGetProgramInfoLog(handle, log_length, NULL, (GLchar*)buffer);
         fprintf(stderr, "%s", buffer);
-        delete buffer;
+        delete[] buffer;
     }
 
     fprintf(stderr, "\n");
