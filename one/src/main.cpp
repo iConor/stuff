@@ -28,11 +28,11 @@ int main(int argc, char** argv)
 #if OS_WINDOWS
     printf("\n");
 
-    char* in_file = "F:\\dev\\probable-garbanzo\\src\\main.cpp";
-    char* out_file = "F:\\dev\\probable-garbanzo\\insane.cpp";
-    char* cop_file = "F:\\dev\\probable-garbanzo\\membrain.cpp";
-    char* mov_file = "F:\\dev\\probable-garbanzo\\brain.cpp";
-    char* dir_file = "F:\\dev\\probable-garbanzo\\directory";
+    char* in_file  = "F:\\dev\\stuff\\one\\src\\main.cpp";
+    char* out_file = "F:\\dev\\stuff\\one\\src\\insane.cpp";
+    char* cop_file = "F:\\dev\\stuff\\one\\src\\membrain.cpp";
+    char* mov_file = "F:\\dev\\stuff\\one\\src\\brain.cpp";
+    char* dir_file = "F:\\dev\\stuff\\one\\src\\directory";
 
     str8 in_str;
     str8 out_str;
