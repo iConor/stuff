@@ -1,8 +1,16 @@
-#include <SDL2/SDL.h>
-
 #ifdef __APPLE__
+
+#include <SDL2/SDL.h>
 #include "OpenGL/gl.h"
+
+#else // Windows
+
+#include <SDL.h>
+#include <windows.h>
+#include <GL/gl.h>
+
 #endif
+
 
 #include "stdlib.h"
 #include "time.h"
