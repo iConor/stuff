@@ -218,8 +218,13 @@ int main(int argc, char* argv[])
     glEnable(GL_CULL_FACE);
     glEnable(GL_DEPTH_TEST);
 
-    for(int frame = 0; frame < 600; frame++)
+    int frame = 0;
+    
+    global_running =  true;
+    while(global_running)
     {
+        sdl_process_events();
+
         glClearColor(0, 0, 0, 0);
         glClear(GL_COLOR_BUFFER_BIT);
         glClear(GL_DEPTH_BUFFER_BIT);
@@ -230,6 +235,7 @@ int main(int argc, char* argv[])
         draw_diamonds(degrees);
         int ms = 33;
 
+        ++frame;
         SDL_GL_SwapWindow(sdl_window);
         SDL_Delay(ms);
     }
