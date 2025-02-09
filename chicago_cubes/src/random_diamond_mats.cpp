@@ -121,6 +121,7 @@ int main(int argc, char* argv[])
     glLoadMatrixf(projection);
 
     int frame = 0;
+    int timer = 45;
 
     global_running = true;
     while(global_running)
@@ -130,13 +131,21 @@ int main(int argc, char* argv[])
         glClearColor(0, 0, 0, 0);
         glClear(GL_COLOR_BUFFER_BIT);
 
-        float degrees = (float)(frame % 360);
-        float radians = deg2rad(degrees);
-        draw_diamonds(radians);
-        int ms = 1500;
+        int ms = 33;
 
-        ++frame;
-        SDL_GL_SwapWindow(sdl_window);
+        ++timer;
+        if(timer > 45)
+        {
+            float degrees = (float)(frame % 360);
+            float radians = deg2rad(degrees);
+            draw_diamonds(radians);
+
+            timer = 0;
+            ++frame;
+
+            SDL_GL_SwapWindow(sdl_window);
+        }
+        
         SDL_Delay(ms);
     }
 
