@@ -67,7 +67,7 @@ void draw_right(float x, float y, float z, float half, float depth)
 }
 
 
-void draw_rect(float x, float y, float z, float size)
+void draw_cube(float x, float y, float z, float size)
 {
     float half = size / 2.0f;
 
@@ -115,7 +115,7 @@ void draw_rect(float x, float y, float z, float size)
     glEnd();
 }
 
-void draw_diamonds(float angle)
+void draw_cubes_move(float angle)
 {
     float size = PX_HEIGHT / 9;
 
@@ -133,7 +133,7 @@ void draw_diamonds(float angle)
             x -= PX_WIDTH / 2.0f;
             y -= PX_HEIGHT / 2.0f;
 
-            draw_rect(x, y, z, size);
+            draw_cube(x, y, z, size);
         }
     }
 }
@@ -213,12 +213,12 @@ int main(int argc, char* argv[])
     };
     glLoadMatrixf(projection);
 
-    generate_offsets();
-
     glEnable(GL_CULL_FACE);
     glEnable(GL_DEPTH_TEST);
 
     int frame = 0;
+
+    generate_offsets();
     
     global_running =  true;
     while(global_running)
@@ -232,7 +232,7 @@ int main(int argc, char* argv[])
         int progress = frame * 2;
         float degrees = (float)(progress % 360);
         float radians = deg2rad(degrees);
-        draw_diamonds(degrees);
+        draw_cubes_move(degrees);
         int ms = 33;
 
         ++frame;

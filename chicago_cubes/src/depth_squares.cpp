@@ -10,7 +10,7 @@
 #define PX_HEIGHT 720
 
 
-void draw_rect(float x, float y, float z, float size)
+void draw_square(float x, float y, float z, float size)
 {
     float half = size / 2.0f;
 
@@ -33,7 +33,7 @@ void draw_rect(float x, float y, float z, float size)
     glEnd();
 }
 
-void draw_diamonds()
+void draw_squares()
 {
     float size = PX_HEIGHT / 9;
 
@@ -49,7 +49,7 @@ void draw_diamonds()
             x -= PX_WIDTH / 2.0f;
             y -= PX_HEIGHT / 2.0f;
 
-            draw_rect(x, y, z, size);
+            draw_square(x, y, z, size);
         }
     }
 }
@@ -135,14 +135,12 @@ int main(int argc, char* argv[])
         ++timer;
         if(timer > 5)
         {
-            float degrees = (float)(frame % 360);
-            float radians = deg2rad(degrees);
-            draw_diamonds();
-
             timer = 0;
-            ++frame;
 
+            draw_squares();
             SDL_GL_SwapWindow(sdl_window);
+
+            ++frame;
         }
         
         SDL_Delay(ms);

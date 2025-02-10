@@ -35,7 +35,7 @@ void draw_diamond(float x, float y, float z, float size)
     glEnd();
 }
 
-void draw_diamonds(float angle)
+void draw_diamond_mats()
 {
     float size = PX_HEIGHT / 9;
 
@@ -136,14 +136,12 @@ int main(int argc, char* argv[])
         ++timer;
         if(timer > 45)
         {
-            float degrees = (float)(frame % 360);
-            float radians = deg2rad(degrees);
-            draw_diamonds(radians);
-
             timer = 0;
-            ++frame;
 
+            draw_diamond_mats();
             SDL_GL_SwapWindow(sdl_window);
+
+            ++frame;
         }
         
         SDL_Delay(ms);

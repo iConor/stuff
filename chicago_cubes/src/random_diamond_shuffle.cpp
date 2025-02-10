@@ -35,7 +35,7 @@ void draw_diamond(float x, float y, float z, float size)
     glEnd();
 }
 
-void draw_diamonds(float angle)
+void draw_diamond_shuffle(float angle)
 {
     float size = PX_HEIGHT / 9;
 
@@ -135,7 +135,7 @@ int main(int argc, char* argv[])
 
         float degrees = (float)(frame % 360);
         float radians = deg2rad(degrees);
-        draw_diamonds(radians);
+        draw_diamond_shuffle(radians);
         int ms = 33;
 
         ++frame;
