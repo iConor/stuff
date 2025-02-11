@@ -1,61 +1,6 @@
 #include "chicago_cubes.h"
 
-
-#include "stdlib.h"
-#include "time.h"
-#include "math.h"
-
-
-#define PX_WIDTH 1280
-#define PX_HEIGHT 720
-
-
-void draw_diamond(float x, float y, float z, float size)
-{
-    float half = size;
-
-    float h = (float)(rand() % 360);
-    float s = 0.33f;
-    float v = 0.66f;
-
-    v3 color = hsv2rgb(h, s, v);
-
-    glBegin(GL_TRIANGLES);
-
-    glColor3f(color.r, color.g, color.b);
-
-    glVertex3f(x - half, y, z);
-    glVertex3f(x, y - half, z);
-    glVertex3f(x + half, y, z);
-
-    glVertex3f(x + half, y, z);
-    glVertex3f(x, y + half, z);
-    glVertex3f(x - half, y, z);
-
-    glEnd();
-}
-
-void draw_diamond_mats()
-{
-    float size = PX_HEIGHT / 9;
-
-    for(int i = 0; i < 16; i++)
-    {
-        for(int j = 0; j < 9; j++)
-        {
-            float x = (float)i * size + size / 2.0f;
-            float y = (float)j * size + size / 2.0f;
-
-            float z = -1.5f;
-
-            x -= PX_WIDTH / 2.0f;
-            y -= PX_HEIGHT / 2.0f;
-
-            draw_diamond(x, y, z, size);
-        }
-    }
-}
-
+#include <time.h>
 
 int main(int argc, char* argv[])
 {

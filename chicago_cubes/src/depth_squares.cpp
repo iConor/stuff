@@ -1,60 +1,6 @@
 #include "chicago_cubes.h"
 
-
-#include "stdlib.h"
 #include "time.h"
-#include "math.h"
-
-
-#define PX_WIDTH 1280
-#define PX_HEIGHT 720
-
-
-void draw_square(float x, float y, float z, float size)
-{
-    float half = size / 2.0f;
-
-    v3 color = { 0.6f, 0.3f, 0.4f };
-
-    glBegin(GL_TRIANGLES);
-
-    glColor3f(color.r, color.g, color.b);
-
-    glVertex3f(x + half, y + half, z);
-    glVertex3f(x - half, y + half, z);
-    glVertex3f(x - half, y - half, z);
-
-    glColor3f(color.b, color.g, color.r);
-
-    glVertex3f(x - half, y - half, z);
-    glVertex3f(x + half, y - half, z);
-    glVertex3f(x + half, y + half, z);
-
-    glEnd();
-}
-
-void draw_squares()
-{
-    float size = PX_HEIGHT / 9;
-
-    for(int i = 0; i < 16; i++)
-    {
-        for(int j = 0; j < 9; j++)
-        {
-            float x = (float)i * size + size / 2.0f;
-            float y = (float)j * size + size / 2.0f;
-
-            float z = (float)(rand() % 10) / 100.0f - 1.15f;
-
-            x -= PX_WIDTH / 2.0f;
-            y -= PX_HEIGHT / 2.0f;
-
-            draw_square(x, y, z, size);
-        }
-    }
-}
-
-
 
 int main(int argc, char* argv[])
 {
