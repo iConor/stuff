@@ -1,7 +1,5 @@
 #include "chicago_cubes.h"
 
-#include <time.h>
-
 int main(int argc, char* argv[])
 {
     int sdl_init = SDL_Init(SDL_INIT_VIDEO|SDL_INIT_AUDIO);
