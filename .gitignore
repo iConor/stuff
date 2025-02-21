@@ -1,0 +1,8 @@
+# Build files
+
+build
+
+# Emacs auto-saves
+
+\#*\#
+.\#*
