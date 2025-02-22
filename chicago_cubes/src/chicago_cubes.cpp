@@ -72,6 +72,25 @@ void sdl_process_events()
         {
             global_running = false;
         }
+		else if(event.type == SDL_KEYDOWN || event.type == SDL_KEYUP)
+		{
+			bool was_down = event.key.state == SDL_RELEASED || event.key.repeat;
+			bool is_down = event.key.state == SDL_PRESSED;
+			if(is_down != was_down)
+			{
+				switch(event.key.keysym.sym)
+				{
+					case '0':
+					{
+						mode = 0;
+					} break;
+					case '1':
+					{
+						mode = 1;
+					} break;
+				}
+			}
+		}
     }
 }
 

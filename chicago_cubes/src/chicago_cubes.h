@@ -46,6 +46,7 @@ union v3
 #define MAX_OFFSET 144
 
 static bool global_running;
+static int mode;
 static float offset[MAX_OFFSET] = {};
 
 

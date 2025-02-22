@@ -69,8 +69,8 @@ int main(int argc, char* argv[])
     int frame = 0;
 
     generate_offsets();
-
-    global_running = true;
+    
+    global_running =  true;
     while(global_running)
     {
         sdl_process_events();
@@ -82,8 +82,17 @@ int main(int argc, char* argv[])
         int progress = frame * 2;
         float degrees = (float)(progress % 360);
         float radians = deg2rad(degrees);
-        draw_cubes_stretch(degrees);
-        int ms = 33;
+
+		if(mode == 0)
+		{
+			draw_cubes_move(degrees);
+		}
+		else if(mode == 1)
+		{
+			draw_cubes_stretch(degrees);
+		}
+
+		int ms = 33;
 
         ++frame;
         SDL_GL_SwapWindow(sdl_window);
