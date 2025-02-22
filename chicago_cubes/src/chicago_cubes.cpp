@@ -88,6 +88,10 @@ void sdl_process_events()
 					{
 						mode = 1;
 					} break;
+					case '2':
+					{
+						mode = 2;
+					} break;
 				}
 			}
 		}

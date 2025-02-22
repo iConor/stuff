@@ -1,5 +1,3 @@
-#include "depth_cubes_move.cpp"
-//#include "depth_cubes_stretch.cpp"
+#include "depth_cubes.cpp"
 //#include "depth_squares.cpp"
 //#include "random_diamond_mats.cpp"
-//#include "random_diamond_shuffle.cpp"

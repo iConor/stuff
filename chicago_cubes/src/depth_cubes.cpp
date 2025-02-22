@@ -91,6 +91,10 @@ int main(int argc, char* argv[])
 		{
 			draw_cubes_stretch(degrees);
 		}
+		else if(mode == 2)
+		{
+			draw_diamond_shuffle(radians);
+		}
 
 		int ms = 33;
 
