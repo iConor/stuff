@@ -67,6 +67,7 @@ int main(int argc, char* argv[])
     glEnable(GL_DEPTH_TEST);
 
     int frame = 0;
+	
 
     generate_offsets();
     
@@ -94,6 +95,10 @@ int main(int argc, char* argv[])
 		else if(mode == 2)
 		{
 			draw_diamond_shuffle(radians);
+		}
+		else if(mode == 3)
+		{
+			draw_squares();
 		}
 
 		int ms = 33;

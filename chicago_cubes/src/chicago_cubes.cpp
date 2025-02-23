@@ -92,6 +92,10 @@ void sdl_process_events()
 					{
 						mode = 2;
 					} break;
+					case '3':
+					{
+						mode = 3;
+					} break;
 				}
 			}
 		}
@@ -325,23 +329,39 @@ void draw_square(float x, float y, float z, float size)
 
 void draw_squares()
 {
-    float size = PX_HEIGHT / 9;
+	static int square_timer = 15;
+	static float z_values[16 * 9] = {};
 
-    for(int i = 0; i < 16; i++)
-    {
-        for(int j = 0; j < 9; j++)
-        {
-            float x = (float)i * size + size / 2.0f;
-            float y = (float)j * size + size / 2.0f;
+	if(square_timer > 5)
+	{
+		square_timer = 0;
+		for(int i = 0; i < 16; i++)
+		{
+			for(int j = 0; j < 9; j++)
+			{
+				z_values[i * 16 + j] = (float)(rand() % 10) / 100.0f - 1.15f;
+			}
+		}
+	}
+	++square_timer;
 
-            float z = (float)(rand() % 10) / 100.0f - 1.15f;
+	float size = PX_HEIGHT / 9;
 
-            x -= PX_WIDTH / 2.0f;
-            y -= PX_HEIGHT / 2.0f;
+	for(int i = 0; i < 16; i++)
+	{
+		for(int j = 0; j < 9; j++)
+		{
+			float x = (float)i * size + size / 2.0f;
+			float y = (float)j * size + size / 2.0f;
 
-            draw_square(x, y, z, size);
-        }
-    }
+			float z = z_values[i * 16 + j];
+
+			x -= PX_WIDTH / 2.0f;
+			y -= PX_HEIGHT / 2.0f;
+
+			draw_square(x, y, z, size);
+		}
+	}
 }
 
 void draw_diamond(float x, float y, float z, float size)
