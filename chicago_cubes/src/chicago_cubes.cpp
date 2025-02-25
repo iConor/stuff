@@ -96,6 +96,10 @@ void sdl_process_events()
 					{
 						mode = 3;
 					} break;
+					case '4':
+					{
+						mode = 4;
+					} break;
 				}
 			}
 		}
@@ -364,11 +368,11 @@ void draw_squares()
 	}
 }
 
-void draw_diamond(float x, float y, float z, float size)
+void draw_diamond(float x, float y, float z, float size, float h)
 {
     float half = size;
 
-    float h = (float)(rand() % 360);
+//    float h = (float)(rand() % 360);
     float s = 0.33f;
     float v = 0.66f;
 
@@ -391,6 +395,22 @@ void draw_diamond(float x, float y, float z, float size)
 
 void draw_diamond_mats()
 {
+	static int diamond_timer = 50;
+	static float h_values[16 * 9] = {};
+
+	if(diamond_timer > 45)
+	{
+		diamond_timer = 0;
+		for(int i = 0; i < 16; i++)
+		{
+			for(int j = 0; j < 9; j++)
+			{
+				h_values[i * 16 + j] = (float)(rand() % 360);;
+			}
+		}
+	}
+	++diamond_timer;
+
     float size = PX_HEIGHT / 9;
 
     for(int i = 0; i < 16; i++)
@@ -405,7 +425,8 @@ void draw_diamond_mats()
             x -= PX_WIDTH / 2.0f;
             y -= PX_HEIGHT / 2.0f;
 
-            draw_diamond(x, y, z, size);
+			float h = h_values[i * 16 + j];
+            draw_diamond(x, y, z, size, h);
         }
     }
 }
@@ -429,7 +450,8 @@ void draw_diamond_shuffle(float angle)
             x *= SDL_cos(angle);
             y *= SDL_sin(angle);
 
-            draw_diamond(x, y, z, size);
+			float h = (float)(rand() % 360);
+            draw_diamond(x, y, z, size, h);
         }
     }
 }
