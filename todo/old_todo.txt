@@ -1,0 +1,63 @@
+.emacs
+    TODO
+    NOTE
+    etc.
+
+
+---
+
+win32_graphics
+win32_opengl
+win32_opengl_2d
+win32_opengl_3d
+win32_opengl_tool
+
+linux_graphics
+linux_opengl
+linux_opengl_2d
+linux_opengl_3d
+
+opengl
+d3d11
+d3d12
+vulkan
+
+---
+
+opencv
+    pip
+    numpy
+    opencv-python
+
+ros2 run image_tools cam2image
+
+ros2 run rqt_image_view rqt_image_view
+
+---
+
+network
+    set vm to bridged while powered off
+    will appear after power on not restart
+
+---
+
+serial
+    add user to dialout
+    sudo usermod -a -g dialout $USER
+    then reboot
+
+---
+
+x86_64 to .obj
+
+.code
+
+label PROC
+    ~~~
+    ~~~
+    ret
+label ENDP
+
+END
+
+function return value goes in AX
