@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{1B83140D-BF02-4CE1-9050-449B0D44DB98}</ProjectGuid>
+    <RootNamespace>render</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)build\$(Configuration)-$(Platform)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)build\$(Configuration)-$(Platform)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)build\$(Configuration)-$(Platform)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)build\$(Configuration)-$(Platform)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>src;$(SolutionDir)vendor\glad\include;$(SolutionDir)vendor\imgui;$(SolutionDir)vendor\stb;$(SolutionDir)platform\src</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>platform.lib;d3d11.lib;opengl32.lib;glad.lib;imgui.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)bin\$(Configuration)-$(Platform)\platform;$(SolutionDir)bin\$(Configuration)-$(Platform)\glad\;$(SolutionDir)bin\$(Configuration)-$(Platform)\imgui\</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>src;$(SolutionDir)vendor\glad\include;$(SolutionDir)vendor\imgui;$(SolutionDir)vendor\stb;$(SolutionDir)platform\src</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>platform.lib;d3d11.lib;opengl32.lib;glad.lib;imgui.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)bin\$(Configuration)-$(Platform)\platform;$(SolutionDir)bin\$(Configuration)-$(Platform)\glad\;$(SolutionDir)bin\$(Configuration)-$(Platform)\imgui\</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>src;$(SolutionDir)vendor\glad\include;$(SolutionDir)vendor\imgui;$(SolutionDir)vendor\stb;$(SolutionDir)platform\src</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>platform.lib;d3d11.lib;opengl32.lib;glad.lib;imgui.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)bin\$(Configuration)-$(Platform)\platform;$(SolutionDir)bin\$(Configuration)-$(Platform)\glad\;$(SolutionDir)bin\$(Configuration)-$(Platform)\imgui\</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>src;$(SolutionDir)vendor\glad\include;$(SolutionDir)vendor\imgui;$(SolutionDir)vendor\stb;$(SolutionDir)platform\src</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>platform.lib;d3d11.lib;opengl32.lib;glad.lib;imgui.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)bin\$(Configuration)-$(Platform)\platform;$(SolutionDir)bin\$(Configuration)-$(Platform)\glad\;$(SolutionDir)bin\$(Configuration)-$(Platform)\imgui\</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="src\d3d11\d3d11_object.h" />
+    <ClInclude Include="src\imgui_impl_dx11.h" />
+    <ClInclude Include="src\imgui_impl_opengl3.h" />
+    <ClInclude Include="src\imgui_impl_win32.h" />
+    <ClInclude Include="src\opengl\opengl_object.h" />
+    <ClInclude Include="src\d3d11\d3d11_buffer.h" />
+    <ClInclude Include="src\d3d11\d3d11_core.h" />
+    <ClInclude Include="src\d3d11\d3d11_layout.h" />
+    <ClInclude Include="src\d3d11\d3d11_program.h" />
+    <ClInclude Include="src\d3d11\d3d11_sampler.h" />
+    <ClInclude Include="src\d3d11\d3d11_shader.h" />
+    <ClInclude Include="src\d3d11\d3d11_texture.h" />
+    <ClInclude Include="src\object.h" />
+    <ClInclude Include="src\opengl\opengl_buffer.h" />
+    <ClInclude Include="src\opengl\opengl_layout.h" />
+    <ClInclude Include="src\opengl\opengl_program.h" />
+    <ClInclude Include="src\opengl\opengl_sampler.h" />
+    <ClInclude Include="src\opengl\opengl_shader.h" />
+    <ClInclude Include="src\opengl\opengl_texture.h" />
+    <ClInclude Include="src\buffer.h" />
+    <ClInclude Include="src\layout.h" />
+    <ClInclude Include="src\platform.h" />
+    <ClInclude Include="src\platform_render.h" />
+    <ClInclude Include="src\platform_window.h" />
+    <ClInclude Include="src\sampler.h" />
+    <ClInclude Include="src\shader.h" />
+    <ClInclude Include="src\program.h" />
+    <ClInclude Include="src\texture.h" />
+    <ClInclude Include="src\opengl\opengl_core.h" />
+    <ClInclude Include="src\render.h" />
+    <ClInclude Include="src\core.h" />
+    <ClInclude Include="src\win32_render_d3d11.h" />
+    <ClInclude Include="src\win32_render_opengl.h" />
+    <ClInclude Include="src\win32_window.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\d3d11\d3d11_object.cpp" />
+    <ClCompile Include="src\imgui_impl_dx11.cpp" />
+    <ClCompile Include="src\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="src\imgui_impl_win32.cpp" />
+    <ClCompile Include="src\object.cpp" />
+    <ClCompile Include="src\opengl\opengl_object.cpp" />
+    <ClCompile Include="src\d3d11\d3d11_buffer.cpp" />
+    <ClCompile Include="src\d3d11\d3d11_core.cpp" />
+    <ClCompile Include="src\d3d11\d3d11_layout.cpp" />
+    <ClCompile Include="src\d3d11\d3d11_program.cpp" />
+    <ClCompile Include="src\d3d11\d3d11_sampler.cpp" />
+    <ClCompile Include="src\d3d11\d3d11_shader.cpp" />
+    <ClCompile Include="src\d3d11\d3d11_texture.cpp" />
+    <ClCompile Include="src\opengl\opengl_buffer.cpp" />
+    <ClCompile Include="src\opengl\opengl_layout.cpp" />
+    <ClCompile Include="src\opengl\opengl_program.cpp" />
+    <ClCompile Include="src\opengl\opengl_sampler.cpp" />
+    <ClCompile Include="src\opengl\opengl_shader.cpp" />
+    <ClCompile Include="src\opengl\opengl_texture.cpp" />
+    <ClCompile Include="src\buffer.cpp" />
+    <ClCompile Include="src\layout.cpp" />
+    <ClCompile Include="src\platform_render.cpp" />
+    <ClCompile Include="src\platform_window.cpp" />
+    <ClCompile Include="src\sampler.cpp" />
+    <ClCompile Include="src\shader.cpp" />
+    <ClCompile Include="src\program.cpp" />
+    <ClCompile Include="src\texture.cpp" />
+    <ClCompile Include="src\opengl\opengl_core.cpp" />
+    <ClCompile Include="src\core.cpp" />
+    <ClCompile Include="src\win32_render_d3d11.cpp" />
+    <ClCompile Include="src\win32_render_opengl.cpp" />
+    <ClCompile Include="src\win32_window.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
